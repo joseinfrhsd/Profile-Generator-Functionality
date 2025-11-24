@@ -10,12 +10,14 @@ var buTton = document.getElementById('submitBtn');
 var outPut = document.getElementById('output');
 const element = document.getElementById("myBtn");
 
-console.log(nameBox);
-console.log(nameAge);
-console.log(favColor);
-console.log(favPet);
-console.log(hoBby);
+buTton.addEventListener("click",info);
+function info(){
+console.log(nameBox.value);
+console.log(nameAge.value);
+console.log(favColor.value);
+output.innerHTML=nameBox.value +" "+ nameAge.value +" "+ favColor.value;
+}
+
 console.log(buTton);
-console.log(outPut);
-console.log(textBox);
+
 console.log("nameInput", nameBox, "ageInput", nameAge);
