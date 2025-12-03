@@ -1,38 +1,72 @@
+var namebox = document.getElementById('nameInput');
+//console.log(namebox);
 
-var nameBox = document.getElementById('nameInput');
+
 var nameAge = document.getElementById('ageInput');
+//console.log(nameAge);
+
+
+
+
 var favColor = document.getElementById('colorInput');
-var pet = document.getElementsByName('pet');
-var favPet = document.querySelectorAll("input[type='radio']");
-var hoBby = document.getElementsByClassName('hobby');
-var hoBy = document.querySelectorAll("input[type='checkbox']");
-var buTton = document.getElementById('submitBtn');
-var outPut = document.getElementById('output');
-const element = document.getElementById("myBtn");
-let c = [];
-buTton.addEventListener("click",info);
-function info(){
+//console.log(favColor);
+
+
+var pet = document.querySelectorAll("input[type='radio']");
+//console.log(pet);
+
+
+var hobby = document.querySelectorAll("input[type='checkbox']");
+//console.log(hobbies);
+
+
+var button = document.getElementById('submitBtn');
+//console.log(button);
+
+
+button.addEventListener("click", info);
+
+
+let favPet;
+let hobbies = [];
+
+
+function info() {
+    //console.log(nameAge.value);
+    //console.log(favColor.value);
     hobbies = [];
- console.log(nameBox.value);
- console.log(nameAge.value);
-console.log(favColor.value);
-for(let i = 0; i < favPet.length; i++){
-    if(favPet[i].checked){
-        favPet = pet[i].value;
+    
+
+    //check for pets
+    for (let i = 0; i < pet.length; i++) {
+        if (pet[i].checked) {
+            favPet = pet[i].value;
+        }
     }
-}
-console.log(favPet);
-
-for(let i = 0; i < hoBy.length; i++){
-    if(hoBy[i].checked){
-        hobbies.push(" "+ hoBy[i].value);
+    console.log(favPet);
+    
+    
+    //check hobbies
+    for (let i = 0; i < hobby.length; i++) {
+        if (hobby[i].checked) {
+            hobbies.push(" " + hobby[i].value);
+        }
     }
+    
+    
+    console.log(hobbies);
+    
+    outPut.innerHTML = namebox.value + " " + nameAge.value + " " + favColor.value + " " + favPet + " " + hobbies;
+
+
+
 }
-console.log(hobbies);
 
-console.log("nameInput", nameBox, "ageInput", nameAge);
-}
 
-// console.log(buTton);
+var outPut = document.getElementById('output');
+//console.log(outPut);
 
-// console.log("nameInput", nameBox, "ageInput", nameAge);
+
+const element = document.getElementById('mybtn');
+
+
